@@ -118,5 +118,25 @@ plt.show()
 # Podsumowanie
 '''
 Ocena dokladnosci predykcji modelu ("Accuracy") na poziomie 0.45 wskazuje na niedostateczne zbalansowanie klas
-w tym projekcie. Kategoryzacja do zaledwie jednej z czterech klas osiaga zadowalajce wyniki oceny.
+w tym projekcie.
+
+Wspolczynnik precyzji ("Precision") wskazuje, ze sposrod genow, ktore zostaly zaklasyfikowane jako kodujace bialka 
+enzymatyczne ("enzyme") 71% faktycznie nimi bylo. Dla kolejnych klas wynik ten prezentuje sie na bardzo niskim poziomie:
+jedynie 0.29% genow zakwalifikowanych jako kodujace bialka receptorowe ("receptor"), 0.33% genow bialek strukturalnych
+("structural protein") i regulatorow transkrypcji ("transcription factor") zostalo zaklasyfikowane poprawnie.
+
+Wynik oceny czulosci ("Recall") wskazal natomiast, ze w przypadku klasy "enzyme" sposrod wszystkich genow tej klasy
+83% zostaly pozytywnie do niej zakwalifikowane - 1 sposrod 6 probek zostala zakwalifikowana do klasy "receptor", 
+co obrazuje graficzne przedstawienie "Confusion Matrix". Jedynie polowa genow z klasy "receptor" zostala poprawnie 
+rozpoznana (pozostale 2 z 4 probek byly mylone z klasami "structural protein" i "transcription factor"), sposrod
+genow dwoch ostatnich klas tylko 1/4 byla przez model poprawnie rozpoznawana, przy czym najslabiej odrozniajaca sie
+zdaje sie byc klasa "structural protein", gdyz geny nalezace do niej byly mylone ze wszystkimi pozostalymi klasami.
+
+Podsumowujac,  kategoryzacja do zaledwie jednej z czterech klas osiaga zadowalajce wyniki oceny.
+Klasa genow kodujacych bialka enzymatyczne ("enzyme") wyraznie rozni sie od pozostalych klas i jest
+ona efektywnie rozpoznawana przez model Lasu Losowego. Najslabsze wyniki predykcji model osiaga probujac
+rozpoznac geny nalezace do klasy "structural protein". 
+
+Dodanie wiekszej liczby badanych genow do tego eksperymentu w celu zrownowazenia liczebnosci probek w klasach, mogloby
+efektywnie poprawic wynik predykcji.
 '''
